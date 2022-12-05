@@ -2,6 +2,9 @@ package tn.esprit.spring.services;
 
 import tn.esprit.spring.entity.Equipe;
 
+import java.util.List;
+import java.util.Map;
+
 public interface IEquipeService {
 
     public Long ajouterEquipe(Equipe e);
@@ -11,4 +14,7 @@ public interface IEquipeService {
     Equipe updateEquipe(Equipe e);
 
     Equipe retrieveEquipe (Long idEquipe);
+    public List<Equipe> search(String keyword);
+    public void assignEquipeDeatilEquipe( Long idEquipe , Long idDetailEquipe);
+    public Map<String, Integer> statistiqueEquipe();
 }

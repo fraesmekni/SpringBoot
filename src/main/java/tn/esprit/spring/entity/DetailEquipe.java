@@ -1,4 +1,5 @@
 package tn.esprit.spring.entity;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 import javax.persistence.*;
 import java.io.Serializable;
@@ -18,7 +19,7 @@ public class DetailEquipe implements Serializable {
     private Long salle;
     private String thematique;
 
-    @OneToOne(mappedBy="detailEquipe")
+    @OneToOne
     private Equipe equipe;
 
 }

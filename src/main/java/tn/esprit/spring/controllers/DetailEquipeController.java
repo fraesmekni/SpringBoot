@@ -16,29 +16,34 @@ public class DetailEquipeController {
     @Autowired
     IDetailEquipe idetailEquipe;
 
-    @GetMapping("/")
+    @GetMapping("/Affichage")
+    @CrossOrigin(origins = "*")
     public Iterable<DetailEquipe>  GetAllDetailEquipe(){
         return idetailEquipe.retrieveAllDetailEquipe();
     }
     @GetMapping("/DetailEquipeById/{detailEquipe-id}")
+    @CrossOrigin(origins = "*")
     public Optional< DetailEquipe > GetDetailEquipebyId(@PathVariable("detailEquipe-id") Long Id){
         return idetailEquipe.findDetailEquipeById(Id);
     }
     @PostMapping("/addDetailEquipe")
+    @CrossOrigin(origins = "*")
     @ResponseBody
     public void addDetailEquipe(@RequestBody DetailEquipe detailEquipe) {
         idetailEquipe.ajouterDetailEquipe(detailEquipe);
     }
 
     @PutMapping("/updateDetailEquipe")
+    @CrossOrigin(origins = "*")
     @ResponseBody
     public void updateDetailEquipe(@RequestBody DetailEquipe detailEquipe) {
         idetailEquipe.updateDetailEquipe(detailEquipe);
     }
 
-    @DeleteMapping("/deleteDetailEquipe/{DetailEquipe-id}")
+    @DeleteMapping("/deleteDetailEquipe/{id}")
+    @CrossOrigin(origins = "*")
     @ResponseBody
-    public void deleteEtudiant(@PathVariable("detailEquipe-id") Integer detailEquipeId ) {
+    public void deleteDetailEquipe(@PathVariable("id") Long detailEquipeId ) {
         idetailEquipe.deleteDetailEquipe(detailEquipeId);
     }
 }

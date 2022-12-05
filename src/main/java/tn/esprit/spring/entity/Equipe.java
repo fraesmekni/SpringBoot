@@ -1,5 +1,6 @@
 package tn.esprit.spring.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,6 +29,7 @@ public class Equipe implements Serializable {
     @JsonIgnore
     @ManyToMany
     private Set<Etudiant> etudiants;
+    @JsonBackReference
 
    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private DetailEquipe detailEquipe;

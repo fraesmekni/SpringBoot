@@ -32,8 +32,9 @@ public class DetailEquipeServiceImp implements IDetailEquipe {
     }
 
     @Override
-    public void deleteDetailEquipe(long id) {
-        detailEquipeRepository.deleteById(id);}
+    public void deleteDetailEquipe(Long id) {
+        detailEquipeRepository.deleteById(id);
+    }
 
     @Override
     public DetailEquipe updateDetailEquipe(DetailEquipe d) {return detailEquipeRepository.save(d);}
